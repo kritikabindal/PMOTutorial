@@ -1,0 +1,51 @@
+/* IAActualsGrid.css */
+
+.ia-actuals-grid {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ccc;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.ia-actuals-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.ia-actuals-actions button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.ia-actuals-actions button.edit-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.ia-actuals-actions button.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Add more styling as needed */

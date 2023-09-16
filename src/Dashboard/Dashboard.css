@@ -1,0 +1,40 @@
+/* Dashboard.css */
+
+.dashboard-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.dashboard-container label {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.dashboard-container select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.dashboard-container p {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* Style the dropdown options */
+.dashboard-container select option {
+  font-size: 16px;
+}
