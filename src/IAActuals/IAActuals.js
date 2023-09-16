@@ -84,28 +84,30 @@ import React, { useState, useEffect } from 'react';
 import IAActualsEdit from './IAActualsEdit';
 import IAActualsDelete from './IAActualsDelete';
 
+const dummyIAActualsData = [
+    {
+        id: 1,
+        rtcId: 'RTC001',
+        cdNumber: 'CD001',
+        validity: 'Valid',
+        projectName: 'Project A',
+    },
+    {
+        id: 2,
+        rtcId: 'RTC002',
+        cdNumber: 'CD002',
+        validity: 'Invalid',
+        projectName: 'Project B',
+    },
+    // Add more objects with sample data as needed
+];
+
 const IAActuals = () => {
     const initialData = loadFromLocalStorage() || { rtcId: '', cdNumber: '', validity: '', projectName: '' };
     const [editData, setEditData] = useState(null);
     const [deleteData, setDeleteData] = useState(null);
+    const [data, setData] = useState(dummyIAActualsData)
     // Dummy data
-    const dummyIAActualsData = [
-        {
-            id: 1,
-            rtcId: 'RTC001',
-            cdNumber: 'CD001',
-            validity: 'Valid',
-            projectName: 'Project A',
-        },
-        {
-            id: 2,
-            rtcId: 'RTC002',
-            cdNumber: 'CD002',
-            validity: 'Invalid',
-            projectName: 'Project B',
-        },
-        // Add more objects with sample data as needed
-    ];
 
     const handleEdit = (item) => {
         // Handle edit logic here
@@ -118,7 +120,12 @@ const IAActuals = () => {
         // setEditData(item);
         // saveToLocalStorage(editData);
         // Update the state with the edited data
-        setEditData(editData);
+        // setEditData(editData);
+        const currentData = data;
+        const currentRowIndex = data.findIndex(item => item.id === editData.id);
+        currentData[currentRowIndex] = editData;
+        setData([...currentData])
+        setEditData(null)
     };
 
     const handleDelete = (item) => {
@@ -153,7 +160,7 @@ const IAActuals = () => {
     return (
         <div>
             <h2>IA Actuals</h2>
-            <IAActualsGrid data={dummyIAActualsData} onEdit={handleEdit} onDelete={handleDelete} />
+            <IAActualsGrid data={data} onEdit={handleEdit} onDelete={handleDelete} />
             {editData && (
                 <IAActualsEdit data={editData} onSave={handleSave} onDelete={()=> {}} />
             )}
