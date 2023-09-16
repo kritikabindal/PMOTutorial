@@ -127,7 +127,7 @@ const IAActuals = () => {
     };
     const handleCancel = (item) => {
         // Handle delete logic here
-        onDelete(item);
+        // onDelete(item);
     };
 
 
@@ -155,7 +155,7 @@ const IAActuals = () => {
             <h2>IA Actuals</h2>
             <IAActualsGrid data={dummyIAActualsData} onEdit={handleEdit} onDelete={handleDelete} />
             {editData && (
-                <IAActualsEdit data={editData} onSave={handleSave} />
+                <IAActualsEdit data={editData} onSave={handleSave} onDelete={()=> {}} />
             )}
 
             {deleteData && (
