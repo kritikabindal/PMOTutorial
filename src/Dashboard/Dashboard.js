@@ -38,6 +38,9 @@ const Dashboard = () => {
         if (selectedValue === 'IA Actuals') {
             // Route to the IAActuals component
             history.push('/ia-actuals');
+        } else if(selectedValue === 'Workstack'){
+            history.push('/workstack?data=workstack');
+
         }
     };
 

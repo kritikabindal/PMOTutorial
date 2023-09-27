@@ -12,6 +12,7 @@ import IAActualsGrid from '../IAActuals/IAActualsGrid';
 import IAActualsEdit from '../IAActuals/IAActualsEdit';
 import IAActualsDelete from '../IAActuals/IAActualsDelete';
 import IAActuals from '../IAActuals/IAActuals';
+import Workstack from '../IAActuals/WorkStack';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,6 +40,7 @@ class App extends React.Component {
                 <Route path="/login" component={LoginPage} />
                 <Route path="/register" component={RegisterPage} />
                 <Route path="/ia-actuals" component={IAActuals} />
+                <Route path="/workstack" component={Workstack} />
                 {/* <Route path="/ia-actuals" component={IAActualsGrid} /> */}
                 <Route path="/edit/:id" component={IAActualsEdit} />
                 <Route path="/delete/:id" component={IAActualsDelete} />
