@@ -83,6 +83,8 @@ import IAActualsGrid from './IAActualsGrid'; // Import your IAActualsGrid compon
 import React, { useState, useEffect } from 'react';
 import IAActualsEdit from './IAActualsEdit';
 import IAActualsDelete from './IAActualsDelete';
+import readXlsxFile from 'read-excel-file'
+
 
 const dummyIAActualsData = [
     {
@@ -107,6 +109,22 @@ const IAActuals = () => {
     const [editData, setEditData] = useState(null);
     const [deleteData, setDeleteData] = useState(null);
     const [data, setData] = useState(dummyIAActualsData)
+    const [selectedFile, setSelectedFile] = useState();
+    
+
+    useEffect(() => {
+        if(selectedFile){
+            readXlsxFile(selectedFile).then((rows) => {
+                console.log('KW101', rows)
+                const newData = rows.map(item => ({'cdNumber': item[0],'rtcId': item[1]}))
+                setData(newData)
+                // `rows` is an array of rows
+                // each row being an array of cells.
+              })
+        }
+        
+    },[selectedFile])
+   
     // Dummy data
 
     const handleEdit = (item) => {
@@ -157,9 +175,17 @@ const IAActuals = () => {
     //   }
     // }, []);
 
+    const onFileChange = event => {
+ 
+        // Update the state
+        setSelectedFile(event.target.files[0]);
+ 
+    };
+
     return (
         <div>
             <h2>IA Actuals</h2>
+            <input type="file" id="input" onChange={onFileChange}/>
             <IAActualsGrid data={data} onEdit={handleEdit} onDelete={handleDelete} />
             {editData && (
                 <IAActualsEdit data={editData} onSave={handleSave} onDelete={()=> {}} />
