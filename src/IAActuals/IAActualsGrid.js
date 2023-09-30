@@ -5,6 +5,7 @@ const IAActualsGrid = ({ data, onEdit, onDelete }) => {
     return (
         <div className="ia-actuals-grid">
             {/* <h3>IA Actuals Data</h3> */}
+            {/* Todo: add all fields here from workbook */}
             <table>
                 <thead>
                     <tr>
