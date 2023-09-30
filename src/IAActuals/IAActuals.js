@@ -1,108 +1,11 @@
-// import React, { useState } from 'react';
-// import IAActualsGrid from './IAActualsGrid';
-// import IAActualsEdit from './IAActualsEdit';
-// import IAActualsDelete from './IAActualsDelete';
-// import IAActualsReport from './IAActualsReport';
-// import IAActualsSearch from './IAActualsSearch';
-// import IAActualsAdd from './IAActualsAdd';
-// import './IAActuals.css'; 
-
-// const IAActuals = () => {
-//   const [selectedOption, setSelectedOption] = useState('');
-// const [editData, setEditData] = useState(null);
-// const [deleteData, setDeleteData] = useState(null);
-//   const [generateReport, setGenerateReport] = useState(false);
-
-//   const handleOptionChange = (e) => {
-//     setSelectedOption(e.target.value);
-//   };
-
-//   const handleEdit = (data) => {
-//     setEditData(data);
-//   };
-
-//   const handleDelete = (data) => {
-//     setDeleteData(data);
-//   };
-
-//   const handleGenerateReport = () => {
-//     setGenerateReport(true);
-//   };
-
-//   const handleCancel = () => {
-//     setEditData(null);
-//     setDeleteData(null);
-//     setGenerateReport(false);
-//   };
-
-//   return (
-//     <div className="ia-actuals-container">
-//       <h2>IA Actuals</h2>
-//       <label>Select an option:</label>
-//       <select value={selectedOption} onChange={handleOptionChange}>
-//         <option value="">Select an option</option>
-//         <option value="viewEdit">View/Edit Data</option>
-//         <option value="delete">Delete Data</option>
-//         <option value="generateReport">Generate Report</option>
-//         <option value="search">Search by CD Number</option>
-//         <option value="addNew">Add New Record</option>
-//       </select>
-
-//       {selectedOption === 'viewEdit' && (
-//         <IAActualsGrid onEdit={handleEdit} onDelete={handleDelete} />
-//       )}
-
-//       {selectedOption === 'delete' && (
-//         <IAActualsDelete data={deleteData} onCancel={handleCancel} />
-//       )}
-
-//       {selectedOption === 'generateReport' && (
-//         <IAActualsReport generateReport={generateReport} onCancel={handleCancel} />
-//       )}
-
-//       {selectedOption === 'search' && <IAActualsSearch />}
-
-//       {selectedOption === 'addNew' && (
-//         <IAActualsAdd onCancel={handleCancel} />
-//       )}
-
-// {editData && (
-//   <IAActualsEdit data={editData} onCancel={handleCancel} />
-// )}
-
-// {deleteData && (
-//   <IAActualsEdit data={deleteData} onCancel={handleCancel} />
-// )}
-//     </div>
-//   );
-// };
-
-// export default IAActuals;
-
 import IAActualsGrid from './IAActualsGrid'; // Import your IAActualsGrid component
 import React, { useState, useEffect } from 'react';
 import IAActualsEdit from './IAActualsEdit';
 import IAActualsDelete from './IAActualsDelete';
 import readXlsxFile from 'read-excel-file'
+import ExcelJS from 'exceljs';
 
 
-const dummyIAActualsData = [
-    {
-        id: 1,
-        rtcId: 'RTC001',
-        cdNumber: 'CD001',
-        validity: 'Valid',
-        projectName: 'Project A',
-    },
-    {
-        id: 2,
-        rtcId: 'RTC002',
-        cdNumber: 'CD002',
-        validity: 'Invalid',
-        projectName: 'Project B',
-    },
-    // Add more objects with sample data as needed
-];
 
 const IAActuals = () => {
     const initialData = loadFromLocalStorage() || { rtcId: '', cdNumber: '', validity: '', projectName: '' };
@@ -127,9 +30,20 @@ const IAActuals = () => {
 
     // Dummy data
 
-    const handleEdit = (item) => {
+    const handleEdit = async (item) => {
         // Handle edit logic here
-        setEditData(item);
+        // const workbook = new ExcelJS.Workbook();
+        // await workbook.xlsx.readFile(selectedFile);
+      
+        // // Get the first sheet in the file
+        // const sheet = workbook.getWorksheet(1);
+      
+        // // Update the data in the sheet
+        // sheet.getCell('A1').value = "hello";
+      
+        // // Save the changes to the file
+        // await workbook.xlsx.writeFile(selectedFile);
+        // setEditData(item);
     };
 
     // Define the onSave function
