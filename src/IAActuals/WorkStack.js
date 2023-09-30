@@ -21,6 +21,20 @@ const dummyWorksData = [
     // Add more objects with sample data as needed
 ];
 
+
+useEffect(() => {
+    if (selectedFile) {
+        readXlsxFile(selectedFile).then((rows) => {
+            console.log('KW101', rows)
+            const newData = rows.map(item => ({ 'Date': item[0], 's.no': item[1], 'RTC ID': item[2], 'CDnumber': item[3], 'Project name': item[4], 'application': item[5], 'PJCode': item[6], 'cost': item[7], 'IA Effort': item[8] }))
+            setData(newData)
+            // `rows` is an array of rows
+            // each row being an array of cells.
+        })
+    }
+
+}, [selectedFile])
+
 const Workstack = () => {
     const initialData = loadFromLocalStorage() || { rtcId: '', cdNumber: '', validity: '', projectName: '' };
     const [editData, setEditData] = useState(null);
@@ -67,7 +81,7 @@ const Workstack = () => {
             <h2>IA Actuals</h2>
             <IAActualsGrid data={data} onEdit={handleEdit} onDelete={handleDelete} />
             {editData && (
-                <IAActualsEdit data={editData} onSave={handleSave} onDelete={()=> {}} />
+                <IAActualsEdit data={editData} onSave={handleSave} onDelete={() => { }} />
             )}
 
             {deleteData && (

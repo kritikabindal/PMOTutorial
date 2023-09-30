@@ -110,21 +110,21 @@ const IAActuals = () => {
     const [deleteData, setDeleteData] = useState(null);
     const [data, setData] = useState(dummyIAActualsData)
     const [selectedFile, setSelectedFile] = useState();
-    
+
 
     useEffect(() => {
-        if(selectedFile){
+        if (selectedFile) {
             readXlsxFile(selectedFile).then((rows) => {
                 console.log('KW101', rows)
-                const newData = rows.map(item => ({'cdNumber': item[0],'rtcId': item[1]}))
+                const newData = rows.map(item => ({ 'Date': item[0], 's.no': item[1], 'rtcId': item[2], 'cdNumber': item[3], 'project name': item[4] }))
                 setData(newData)
                 // `rows` is an array of rows
                 // each row being an array of cells.
-              })
+            })
         }
-        
-    },[selectedFile])
-   
+
+    }, [selectedFile])
+
     // Dummy data
 
     const handleEdit = (item) => {
@@ -176,19 +176,19 @@ const IAActuals = () => {
     // }, []);
 
     const onFileChange = event => {
- 
+
         // Update the state
         setSelectedFile(event.target.files[0]);
- 
+
     };
 
     return (
         <div>
             <h2>IA Actuals</h2>
-            <input type="file" id="input" onChange={onFileChange}/>
+            <input type="file" id="input" onChange={onFileChange} />
             <IAActualsGrid data={data} onEdit={handleEdit} onDelete={handleDelete} />
             {editData && (
-                <IAActualsEdit data={editData} onSave={handleSave} onDelete={()=> {}} />
+                <IAActualsEdit data={editData} onSave={handleSave} onDelete={() => { }} />
             )}
 
             {deleteData && (
