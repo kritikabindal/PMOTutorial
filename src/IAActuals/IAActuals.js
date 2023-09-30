@@ -108,7 +108,7 @@ const IAActuals = () => {
     const initialData = loadFromLocalStorage() || { rtcId: '', cdNumber: '', validity: '', projectName: '' };
     const [editData, setEditData] = useState(null);
     const [deleteData, setDeleteData] = useState(null);
-    const [data, setData] = useState(dummyIAActualsData)
+    const [data, setData] = useState([])
     const [selectedFile, setSelectedFile] = useState();
 
 
@@ -116,7 +116,7 @@ const IAActuals = () => {
         if (selectedFile) {
             readXlsxFile(selectedFile).then((rows) => {
                 console.log('KW101', rows)
-                const newData = rows.map(item => ({ 'Date': item[0], 's.no': item[1], 'rtcId': item[2], 'cdNumber': item[3], 'project name': item[4] }))
+                const newData = rows.map(item => ({ 'Date': item[0], 'sNo': item[1], 'rtcId': item[2], 'cdNumber': item[3], 'project name': item[4] }))
                 setData(newData)
                 // `rows` is an array of rows
                 // each row being an array of cells.

@@ -2,6 +2,7 @@ import IAActualsGrid from './IAActualsGrid'; // Import your IAActualsGrid compon
 import React, { useState, useEffect } from 'react';
 import IAActualsEdit from './IAActualsEdit';
 import IAActualsDelete from './IAActualsDelete';
+import readXlsxFile from 'read-excel-file'
 
 const dummyWorksData = [
     {
@@ -21,30 +22,30 @@ const dummyWorksData = [
     // Add more objects with sample data as needed
 ];
 
-
-useEffect(() => {
-    if (selectedFile) {
-        readXlsxFile(selectedFile).then((rows) => {
-            console.log('KW101', rows)
-            const newData = rows.map(item => ({ 'Date': item[0], 's.no': item[1], 'RTC ID': item[2], 'CDnumber': item[3], 'Project name': item[4], 'application': item[5], 'PJCode': item[6], 'cost': item[7], 'IA Effort': item[8] }))
-            setData(newData)
-            // `rows` is an array of rows
-            // each row being an array of cells.
-        })
-    }
-
-}, [selectedFile])
-
 const Workstack = () => {
     const initialData = loadFromLocalStorage() || { rtcId: '', cdNumber: '', validity: '', projectName: '' };
     const [editData, setEditData] = useState(null);
     const [deleteData, setDeleteData] = useState(null);
     const [data, setData] = useState(dummyWorksData)
+    const [selectedFile, setSelectedFile] = useState();
 
     const handleEdit = (item) => {
         // Handle edit logic here
         setEditData(item);
     };
+
+    useEffect(() => {
+        if (selectedFile) {
+            readXlsxFile(selectedFile).then((rows) => {
+                console.log('KW101', rows)
+                const newData = rows.map(item => ({ 'Date': item[0], 's.no': item[1], 'RTC ID': item[2], 'CDnumber': item[3], 'Project name': item[4], 'application': item[5], 'PJCode': item[6], 'cost': item[7], 'IA Effort': item[8] }))
+                setData(newData)
+                // `rows` is an array of rows
+                // each row being an array of cells.
+            })
+        }
+    
+    }, [selectedFile])
 
     // Define the onSave function
     const handleSave = (editData) => {

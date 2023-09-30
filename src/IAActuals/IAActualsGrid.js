@@ -8,16 +8,20 @@ const IAActualsGrid = ({ data, onEdit, onDelete }) => {
             <table>
                 <thead>
                     <tr>
+                        <th>Date</th>
+                        <th>Sno</th>
                         <th>RTC ID</th>
                         <th>CD Number</th>
-                        <th>Validity</th>
                         <th>Project Name</th>
+                        <th>Validity</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {data?.map((item) => (
                         <tr key={item.id}>
+                            <td>{Date(item.Date)}</td>
+                            <td>{item.sNo}</td>
                             <td>{item.rtcId}</td>
                             <td>{item.cdNumber}</td>
                             <td>{item.validity}</td>
