@@ -1,7 +1,7 @@
-// import workstackGrid from './workstackGrid'; // Import your IAActualsGrid component
+// import IAActualsGrid from './IAActualsGrid'; // Import your IAActualsGrid component
 // import React, { useState, useEffect } from 'react';
-// import IAActualsEdit from './workstackEdit';
-// import IAActualsDelete from './workstackDelete';
+// import IAActualsEdit from './IAActualsEdit';
+// import IAActualsDelete from './IAActualsDelete';
 // import readXlsxFile from 'read-excel-file'
 
 // const dummyWorksData = [

@@ -12,7 +12,12 @@ import IAActualsGrid from '../IAActuals/IAActualsGrid';
 import IAActualsEdit from '../IAActuals/IAActualsEdit';
 import IAActualsDelete from '../IAActuals/IAActualsDelete';
 import IAActuals from '../IAActuals/IAActuals';
-import Workstack from '../IAActuals/WorkStack';
+//import Workstack from '../IAActuals/WorkStack';
+// import workstackGrid from '../workstack/workstackGrid';
+// import workstackEdit from '../workstack/workstackEdit';
+// import workstackDelete from '../workstack/workstackDelete';
+import Workstack from '../Workstack/Workstack';
+import './App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -28,14 +33,8 @@ class App extends React.Component {
     const { alert } = this.props;
     return (
       <div>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          fontSize: 24,
-          fontWeight: 'bold',
-          padding: 40
-        }}>PMO TOOL</div>
-        <div style={{height: '100vh'}} className="jumbotron">
+        <div className="header">PMO TOOL</div>
+        <div className="jumbotron">
           <div className="container">
             <div className="col-sm-8 col-sm-offset-2">
               {alert.message &&
