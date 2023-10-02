@@ -18,6 +18,7 @@ const IAActualsEdit = ({ data, onSave, onCancel }) => {
         onSave(editedData); // Call onSave callback with the edited data
     };
 
+    console.log('KW101', editedData)
     return (
         <div className="modal">
             <div className="modal-content">
@@ -46,7 +47,7 @@ const IAActualsEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="text"
                             name="validity"
-                            value={editedData.validity}
+                            value={editedData.Date}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -55,7 +56,7 @@ const IAActualsEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="text"
                             name="projectName"
-                            value={editedData.projectName}
+                            value={editedData['project name']}
                             onChange={handleInputChange}
                         />
                     </div>
