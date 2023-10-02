@@ -38,7 +38,7 @@ const Workstack = () => {
         if (selectedFile) {
             readXlsxFile(selectedFile).then((rows) => {
                 console.log('KW101', rows)
-                const newData = rows.map(item => ({ 'Date': item[0], 's.no': item[1], 'RTC ID': item[2], 'CDnumber': item[3], 'Project name': item[4], 'application': item[5], 'PJCode': item[6], 'cost': item[7], 'IA Effort': item[8] }))
+                const newData = rows.map(item => ({ 'Date': item[0], 's.no': item[1], 'RTC ID': item[2], 'CDnumber': item[3], 'projectName': item[4], 'application': item[5], 'PJCode': item[6], 'cost': item[7], 'IA Effort': item[8] }))
                 setData(newData)
                 // `rows` is an array of rows
                 // each row being an array of cells.

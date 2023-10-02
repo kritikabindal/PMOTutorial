@@ -31,10 +31,6 @@ const IAActualsGrid = ({ data, onEdit, onDelete }) => {
                             <td>{item.Projectresource}</td>
                             <td>{item.PJcode}</td>
                             <td>{item.IATotals}</td>
-
-
-
-
                             <td>
                                 <button onClick={() => onEdit(item)}>Edit</button>
                                 <button onClick={() => onDelete(item)}>Delete</button>

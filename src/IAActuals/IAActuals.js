@@ -19,7 +19,8 @@ const IAActuals = () => {
         if (selectedFile) {
             readXlsxFile(selectedFile).then((rows) => {
                 console.log('KW101', rows)
-                const newData = rows.map(item => ({ 'Date': item[0], 'sNo': item[1], 'rtcId': item[2], 'cdNumber': item[3], 'project name': item[4] }))
+                // ToDo: Add respective columns
+                const newData = rows.map(item => ({ 'Date': item[0], 'sNo': item[1], 'rtcId': item[2], 'cdNumber': item[3], 'projectName': item[4] }))
                 setData(newData)
                 // `rows` is an array of rows
                 // each row being an array of cells.

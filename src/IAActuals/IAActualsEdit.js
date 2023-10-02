@@ -56,7 +56,7 @@ const IAActualsEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="text"
                             name="projectName"
-                            value={editedData['project name']}
+                            value={editedData.projectName}
                             onChange={handleInputChange}
                         />
                     </div>
