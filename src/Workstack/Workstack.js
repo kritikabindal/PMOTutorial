@@ -5,19 +5,19 @@ import WorkstackDelete from './workstackDelete';
 import readXlsxFile from 'read-excel-file'
 import ExcelJS from 'exceljs';
 
-// eslint-disable-next-line react-hooks/rules-of-hooks
+
 const Workstack = () => {
-    const initialData = loadFromLocalStorage() || { rtcId: '', cdNumber: '', validity: '', projectName: '' };
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const initialData = loadFromLocalStorage() || { Date: '', sNo: '', rtcId: '', cdNumber: '', projectName: '', Application: '', pjCode: '', cost: '', IAEffort: '', December_2022: '', January_2023: '' };
+
 
     const [editData, setEditData] = useState(null);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+
 
     const [deleteData, setDeleteData] = useState(null);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+
 
     const [data, setData] = useState([])
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+
 
     const [selectedFile, setSelectedFile] = useState();
 

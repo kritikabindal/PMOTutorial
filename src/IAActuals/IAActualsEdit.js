@@ -18,18 +18,36 @@ const IAActualsEdit = ({ data, onSave, onCancel }) => {
         onSave(editedData); // Call onSave callback with the edited data
     };
 
-    console.log('KW101', editedData)
+    // console.log('KW101', editedData)
     return (
         <div className="modal">
             <div className="modal-content">
                 <h3>Edit IA Actuals Data</h3>
                 <form>
                     <div className="form-group">
+                        <label>Date</label>
+                        <input
+                            type="date"
+                            name="Date"
+                            value={newData.Date}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>sNo</label>
+                        <input
+                            type="date"
+                            name="text"
+                            value={newData.sNo}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
                         <label>RTC ID</label>
                         <input
                             type="text"
                             name="rtcId"
-                            value={editedData.rtcId}
+                            value={newData.rtcId}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -38,30 +56,50 @@ const IAActualsEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="text"
                             name="cdNumber"
-                            value={editedData.cdNumber}
+                            value={newData.cdNumber}
                             onChange={handleInputChange}
                         />
                     </div>
-                    <div className="form-group">
-                        <label>Validity</label>
-                        <input
-                            type="text"
-                            name="validity"
-                            value={editedData.Date}
-                            onChange={handleInputChange}
-                        />
-                    </div>
+
                     <div className="form-group">
                         <label>Project Name</label>
                         <input
                             type="text"
                             name="projectName"
-                            value={editedData.projectName}
+                            value={newData.projectName}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>projectResource</label>
+                        <input
+                            type="text"
+                            name="projectResource"
+                            value={newData.projectResource}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label>pjCode</label>
+                        <input
+                            type="text"
+                            name="pjCode"
+                            value={newData.pjCode}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>IATotals</label>
+                        <input
+                            type="text"
+                            name="IATotals"
+                            value={newData.IATotals}
                             onChange={handleInputChange}
                         />
                     </div>
                     <div className="form-actions">
-                        <button onClick={handleSave}>Save</button>
+                        <button onClick={handleAdd}>Add</button>
                         <button onClick={onCancel}>Cancel</button>
                     </div>
                 </form>

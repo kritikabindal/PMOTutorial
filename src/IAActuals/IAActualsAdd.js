@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import './IAActualsAdd.css';
 
 
+
+
 const IAActualsAdd = ({ onAdd, onCancel }) => {
     const [newData, setNewData] = useState({
+        Date: '',
+        sNo: '',
         rtcId: '',
         cdNumber: '',
-        validity: '',
         projectName: '',
+        projectResource: '',
+        pjCode: '',
+        IATotals: ''
     });
 
     const handleInputChange = (e) => {
@@ -21,12 +27,17 @@ const IAActualsAdd = ({ onAdd, onCancel }) => {
     const handleAdd = () => {
         onAdd(newData);
         setNewData({
+            Date: '',
+            sNo: '',
             rtcId: '',
             cdNumber: '',
-            validity: '',
             projectName: '',
+            projectResource: '',
+            pjCode: '',
+            IATotals: ''
         });
     };
+
 
     return (
 
@@ -34,6 +45,24 @@ const IAActualsAdd = ({ onAdd, onCancel }) => {
             <div className="modal-content">
                 <h3>Add New IA Actuals Data</h3>
                 <form>
+                    <div className="form-group">
+                        <label>Date</label>
+                        <input
+                            type="date"
+                            name="Date"
+                            value={newData.Date}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>sNo</label>
+                        <input
+                            type="date"
+                            name="text"
+                            value={newData.sNo}
+                            onChange={handleInputChange}
+                        />
+                    </div>
                     <div className="form-group">
                         <label>RTC ID</label>
                         <input
@@ -52,21 +81,41 @@ const IAActualsAdd = ({ onAdd, onCancel }) => {
                             onChange={handleInputChange}
                         />
                     </div>
-                    <div className="form-group">
-                        <label>Validity</label>
-                        <input
-                            type="text"
-                            name="validity"
-                            value={newData.validity}
-                            onChange={handleInputChange}
-                        />
-                    </div>
+
                     <div className="form-group">
                         <label>Project Name</label>
                         <input
                             type="text"
                             name="projectName"
                             value={newData.projectName}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>projectResource</label>
+                        <input
+                            type="text"
+                            name="projectResource"
+                            value={newData.projectResource}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label>pjCode</label>
+                        <input
+                            type="text"
+                            name="pjCode"
+                            value={newData.pjCode}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>IATotals</label>
+                        <input
+                            type="text"
+                            name="IATotals"
+                            value={newData.IATotals}
                             onChange={handleInputChange}
                         />
                     </div>

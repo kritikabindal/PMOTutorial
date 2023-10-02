@@ -8,7 +8,7 @@ import ExcelJS from 'exceljs';
 
 
 const IAActuals = () => {
-    const initialData = loadFromLocalStorage() || { rtcId: '', cdNumber: '', validity: '', projectName: '' };
+    const initialData = loadFromLocalStorage() || { Date: '', sNo: '', rtcId: '', cdNumber: '', projectName: '', resourceResource: '', pjCode: '', IATotals: '' };
     const [editData, setEditData] = useState(null);
     const [deleteData, setDeleteData] = useState(null);
     const [data, setData] = useState([])
@@ -20,7 +20,7 @@ const IAActuals = () => {
             readXlsxFile(selectedFile).then((rows) => {
                 console.log('KW101', rows)
                 // ToDo: Add respective columns
-                const newData = rows.map(item => ({ 'Date': item[0], 'sNo': item[1], 'rtcId': item[2], 'cdNumber': item[3], 'projectName': item[4] }))
+                const newData = rows.map(item => ({ 'Date': item[0], 'sNo': item[1], 'rtcId': item[2], 'cdNumber': item[3], 'projectName': item[4], 'projectResource': item[5], 'pjCode': item[6], 'IATotals': item[7] }))
                 setData(newData)
                 // `rows` is an array of rows
                 // each row being an array of cells.
@@ -35,13 +35,13 @@ const IAActuals = () => {
         // Handle edit logic here
         // const workbook = new ExcelJS.Workbook();
         // await workbook.xlsx.readFile(selectedFile);
-      
+
         // // Get the first sheet in the file
         // const sheet = workbook.getWorksheet(1);
-      
+
         // // Update the data in the sheet
         // sheet.getCell('A1').value = "hello";
-      
+
         // // Save the changes to the file
         // await workbook.xlsx.writeFile(selectedFile);
         // setEditData(item);
