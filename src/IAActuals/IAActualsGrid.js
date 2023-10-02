@@ -14,8 +14,10 @@ const IAActualsGrid = ({ data, onEdit, onDelete }) => {
                         <th>RTC ID</th>
                         <th>CD Number</th>
                         <th>Project Name</th>
-                        <th>Validity</th>
-                        <th>Actions</th>
+                        <th>Project resource</th>
+                        <th> PJ code</th>
+                        <th>IA Totals</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -25,8 +27,14 @@ const IAActualsGrid = ({ data, onEdit, onDelete }) => {
                             <td>{item.sNo}</td>
                             <td>{item.rtcId}</td>
                             <td>{item.cdNumber}</td>
-                            <td>{item.validity}</td>
                             <td>{item.projectName}</td>
+                            <td>{item.Projectresource}</td>
+                            <td>{item.PJcode}</td>
+                            <td>{item.IATotals}</td>
+
+
+
+
                             <td>
                                 <button onClick={() => onEdit(item)}>Edit</button>
                                 <button onClick={() => onDelete(item)}>Delete</button>
