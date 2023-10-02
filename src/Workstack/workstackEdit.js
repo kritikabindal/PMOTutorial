@@ -29,7 +29,7 @@ const WorkstackEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="date"
                             name="Date"
-                            value={newData.Date}
+                            value={data.Date}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -38,7 +38,7 @@ const WorkstackEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="text"
                             name="sNo"
-                            value={newData.sNo}
+                            value={data.sNo}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -47,7 +47,7 @@ const WorkstackEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="text"
                             name="rtcId"
-                            value={newData.rtcId}
+                            value={data.rtcId}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -56,7 +56,7 @@ const WorkstackEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="text"
                             name="cdNumber"
-                            value={newData.cdNumber}
+                            value={data.cdNumber}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -65,7 +65,7 @@ const WorkstackEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="text"
                             name="cdNumber"
-                            value={newData.projectName}
+                            value={data.projectName}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -74,7 +74,7 @@ const WorkstackEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="text"
                             name="validity"
-                            value={newData.Application}
+                            value={data.Application}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -83,12 +83,12 @@ const WorkstackEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="text"
                             name="pjCode"
-                            value={newData.pjCode}
+                            value={data.pjCode}
                             onChange={handleInputChange}
                         />
                     </div>
                     <div className="form-actions">
-                        <button onClick={handleAdd}>Add</button>
+                        <button onClick={()=>{}}>Add</button>
                         <button onClick={onCancel}>Cancel</button>
                     </div>
                 </form>
