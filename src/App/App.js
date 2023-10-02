@@ -27,26 +27,35 @@ class App extends React.Component {
   render() {
     const { alert } = this.props;
     return (
-      <div className="jumbotron">
-        <div className="container">
-          <div className="col-sm-8 col-sm-offset-2">
-            {alert.message &&
-              <div className={`alert ${alert.type}`}>{alert.message}</div>
-            }
-            <Router history={history}>
-              <Switch>
-                {/* <PrivateRoute exact path="/" component={HomePage} /> */}
-                <PrivateRoute exact path="/" component={Dashboard} />
-                <Route path="/login" component={LoginPage} />
-                <Route path="/register" component={RegisterPage} />
-                <Route path="/ia-actuals" component={IAActuals} />
-                <Route path="/workstack" component={Workstack} />
-                {/* <Route path="/ia-actuals" component={IAActualsGrid} /> */}
-                <Route path="/edit/:id" component={IAActualsEdit} />
-                <Route path="/delete/:id" component={IAActualsDelete} />
-                <Redirect from="*" to="/" />
-              </Switch>
-            </Router>
+      <div>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          fontSize: 24,
+          fontWeight: 'bold',
+          padding: 40
+        }}>PMO TOOL</div>
+        <div style={{height: '100vh'}} className="jumbotron">
+          <div className="container">
+            <div className="col-sm-8 col-sm-offset-2">
+              {alert.message &&
+                <div className={`alert ${alert.type}`}>{alert.message}</div>
+              }
+              <Router history={history}>
+                <Switch>
+                  {/* <PrivateRoute exact path="/" component={HomePage} /> */}
+                  <PrivateRoute exact path="/" component={Dashboard} />
+                  <Route path="/login" component={LoginPage} />
+                  <Route path="/register" component={RegisterPage} />
+                  <Route path="/ia-actuals" component={IAActuals} />
+                  <Route path="/workstack" component={Workstack} />
+                  {/* <Route path="/ia-actuals" component={IAActualsGrid} /> */}
+                  <Route path="/edit/:id" component={IAActualsEdit} />
+                  <Route path="/delete/:id" component={IAActualsDelete} />
+                  <Redirect from="*" to="/" />
+                </Switch>
+              </Router>
+            </div>
           </div>
         </div>
       </div>
