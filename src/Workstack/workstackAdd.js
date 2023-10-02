@@ -2,12 +2,21 @@ import React, { useState } from 'react';
 import './workstackAdd.css';
 
 
+
 const WorkstackAdd = ({ onAdd, onCancel }) => {
     const [newData, setNewData] = useState({
+        Date: '',
+        sNo: '',
         rtcId: '',
         cdNumber: '',
-        validity: '',
         projectName: '',
+        Application: '',
+        pjCode: '',
+        cost: '',
+        IAEffort: '',
+        December_2022: '',
+        January_2023: '',
+
     });
 
     const handleInputChange = (e) => {
@@ -21,10 +30,18 @@ const WorkstackAdd = ({ onAdd, onCancel }) => {
     const handleAdd = () => {
         onAdd(newData);
         setNewData({
+            Date: '',
+            sNo: '',
             rtcId: '',
             cdNumber: '',
-            validity: '',
             projectName: '',
+            Application: '',
+            pjCode: '',
+            cost: '',
+            IAEffort: '',
+            December_2022: '',
+            January_2023: '',
+
         });
     };
 
@@ -35,6 +52,24 @@ const WorkstackAdd = ({ onAdd, onCancel }) => {
                 <h3>Add New workstack Data</h3>
                 <form>
                     <div className="form-group">
+                        <label>Date</label>
+                        <input
+                            type="date"
+                            name="Date"
+                            value={newData.Date}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>sNo</label>
+                        <input
+                            type="text"
+                            name="sNo"
+                            value={newData.sNo}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
                         <label>RTC ID</label>
                         <input
                             type="text"
@@ -44,7 +79,7 @@ const WorkstackAdd = ({ onAdd, onCancel }) => {
                         />
                     </div>
                     <div className="form-group">
-                        <label>CD Number</label>
+                        <label>cdNumber</label>
                         <input
                             type="text"
                             name="cdNumber"
@@ -53,20 +88,29 @@ const WorkstackAdd = ({ onAdd, onCancel }) => {
                         />
                     </div>
                     <div className="form-group">
-                        <label>Validity</label>
+                        <label>projectName</label>
                         <input
                             type="text"
-                            name="validity"
-                            value={newData.validity}
+                            name="cdNumber"
+                            value={newData.projectName}
                             onChange={handleInputChange}
                         />
                     </div>
                     <div className="form-group">
-                        <label>Project Name</label>
+                        <label>Application</label>
                         <input
                             type="text"
-                            name="projectName"
-                            value={newData.projectName}
+                            name="validity"
+                            value={newData.Application}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>pjCode</label>
+                        <input
+                            type="text"
+                            name="pjCode"
+                            value={newData.pjCode}
                             onChange={handleInputChange}
                         />
                     </div>

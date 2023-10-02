@@ -14,9 +14,12 @@ const WorkstackGrid = ({ data, onEdit, onDelete }) => {
                         <th>RTC ID</th>
                         <th>CD Number</th>
                         <th>Project Name</th>
-                        <th>Project resource</th>
+                        <th>Application</th>
                         <th> PJ code</th>
-                        <th>IA Totals</th>
+                        <th>cost</th>
+                        <th>IAEffort</th>
+                        <th>December_2022</th>
+                        <th>January_2023</th>
 
                     </tr>
                 </thead>
@@ -28,9 +31,12 @@ const WorkstackGrid = ({ data, onEdit, onDelete }) => {
                             <td>{item.rtcId}</td>
                             <td>{item.cdNumber}</td>
                             <td>{item.projectName}</td>
-                            <td>{item.Projectresource}</td>
-                            <td>{item.PJcode}</td>
-                            <td>{item.IATotals}</td>
+                            <td>{item.Application}</td>
+                            <td>{item.PjCode}</td>
+                            <td>{item.cost}</td>
+                            <td>{item.IAEffort}</td>
+                            <td>{item.December_2022}</td>
+                            <td>{item.january_2023}</td>
                             <td>
                                 <button onClick={() => onEdit(item)}>Edit</button>
                                 <button onClick={() => onDelete(item)}>Delete</button>

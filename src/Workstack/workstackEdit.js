@@ -18,50 +18,77 @@ const WorkstackEdit = ({ data, onSave, onCancel }) => {
         onSave(editedData); // Call onSave callback with the edited data
     };
 
-    console.log('KW101', editedData)
+    // console.log('KW101', editedData)
     return (
         <div className="modal">
             <div className="modal-content">
                 <h3>Edit IA Actuals Data</h3>
                 <form>
                     <div className="form-group">
+                        <label>Date</label>
+                        <input
+                            type="date"
+                            name="Date"
+                            value={newData.Date}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>sNo</label>
+                        <input
+                            type="text"
+                            name="sNo"
+                            value={newData.sNo}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
                         <label>RTC ID</label>
                         <input
                             type="text"
                             name="rtcId"
-                            value={editedData.rtcId}
+                            value={newData.rtcId}
                             onChange={handleInputChange}
                         />
                     </div>
                     <div className="form-group">
-                        <label>CD Number</label>
+                        <label>cdNumber</label>
                         <input
                             type="text"
                             name="cdNumber"
-                            value={editedData.cdNumber}
+                            value={newData.cdNumber}
                             onChange={handleInputChange}
                         />
                     </div>
                     <div className="form-group">
-                        <label>Validity</label>
+                        <label>projectName</label>
+                        <input
+                            type="text"
+                            name="cdNumber"
+                            value={newData.projectName}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Application</label>
                         <input
                             type="text"
                             name="validity"
-                            value={editedData.Date}
+                            value={newData.Application}
                             onChange={handleInputChange}
                         />
                     </div>
                     <div className="form-group">
-                        <label>Project Name</label>
+                        <label>pjCode</label>
                         <input
                             type="text"
-                            name="projectName"
-                            value={editedData.projectName}
+                            name="pjCode"
+                            value={newData.pjCode}
                             onChange={handleInputChange}
                         />
                     </div>
                     <div className="form-actions">
-                        <button onClick={handleSave}>Save</button>
+                        <button onClick={handleAdd}>Add</button>
                         <button onClick={onCancel}>Cancel</button>
                     </div>
                 </form>
