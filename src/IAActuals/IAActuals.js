@@ -44,6 +44,7 @@ const IAActuals = () => {
         // // Save the changes to the file
         // await workbook.xlsx.writeFile(selectedFile);
         // setEditData(item);
+        setEditData(item);
     };
 
     // Define the onSave function
@@ -60,9 +61,9 @@ const IAActuals = () => {
         setEditData(null)
     };
 
-    const handleDelete = (item) => {
+    const handleDelete = () => {
         //   // Handle delete logic here
-        setDeleteData(item);
+        setDeleteData();
     };
     const handleCancel = (item) => {
         // Handle delete logic here
@@ -102,11 +103,11 @@ const IAActuals = () => {
             <input type="file" id="input" onChange={onFileChange} />
             <IAActualsGrid data={data} onEdit={handleEdit} onDelete={handleDelete} />
             {editData && (
-                <IAActualsEdit data={editData} onSave={handleSave} onDelete={() => { }} />
+                <IAActualsEdit data={editData} onSave={handleSave} onCancel={() => setEditData(null)} onDelete={() => { }} />
             )}
 
             {deleteData && (
-                <IAActualsDelete data={deleteData} onCancel={handleCancel} />
+                <IAActualsDelete data={data} onCancel={handleCancel} />
             )}
 
         </div>
