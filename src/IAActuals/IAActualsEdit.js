@@ -29,16 +29,16 @@ const IAActualsEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="date"
                             name="Date"
-                            value={data.Date}
+                            value={editedData.Date}
                             onChange={handleInputChange}
                         />
                     </div>
                     <div className="form-group">
                         <label>sNo</label>
                         <input
-                            type="date"
-                            name="text"
-                            value={data.sNo}
+                            type="text"
+                            name="sNo"
+                            value={editedData.sNo}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -47,7 +47,7 @@ const IAActualsEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="text"
                             name="rtcId"
-                            value={data.rtcId}
+                            value={editedData.rtcId}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -56,7 +56,7 @@ const IAActualsEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="text"
                             name="cdNumber"
-                            value={data.cdNumber}
+                            value={editedData.cdNumber}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -66,7 +66,7 @@ const IAActualsEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="text"
                             name="projectName"
-                            value={data.projectName}
+                            value={editedData.projectName}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -75,7 +75,7 @@ const IAActualsEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="text"
                             name="projectResource"
-                            value={data.projectResource}
+                            value={editedData.projectResource}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -85,7 +85,7 @@ const IAActualsEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="text"
                             name="pjCode"
-                            value={data.pjCode}
+                            value={editedData.pjCode}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -94,13 +94,12 @@ const IAActualsEdit = ({ data, onSave, onCancel }) => {
                         <input
                             type="text"
                             name="IATotals"
-                            value={data.IATotals}
+                            value={editedData.IATotals}
                             onChange={handleInputChange}
                         />
                     </div>
                     <div className="form-actions">
-                        <button onClick={() => { }}>save</button>
-                        <button onClick={handleSave}>save</button>
+                        <button onClick={handleSave}>Add</button>
                         <button onClick={onCancel}>Cancel</button>
                     </div>
                 </form>
