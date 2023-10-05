@@ -99,7 +99,8 @@ const IAActualsEdit = ({ data, onSave, onCancel }) => {
                         />
                     </div>
                     <div className="form-actions">
-                        <button onClick={()=>{}}>Add</button>
+                        <button onClick={() => { }}>save</button>
+                        <button onClick={handleSave}>save</button>
                         <button onClick={onCancel}>Cancel</button>
                     </div>
                 </form>

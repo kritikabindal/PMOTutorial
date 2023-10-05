@@ -48,7 +48,7 @@ const IAActualsAdd = ({ onAdd, onCancel }) => {
                     <div className="form-group">
                         <label>Date</label>
                         <input
-                            type="date"
+                            type="text"
                             name="Date"
                             value={newData.Date}
                             onChange={handleInputChange}
@@ -57,8 +57,8 @@ const IAActualsAdd = ({ onAdd, onCancel }) => {
                     <div className="form-group">
                         <label>sNo</label>
                         <input
-                            type="date"
-                            name="text"
+                            type="text"
+                            name="s.no"
                             value={newData.sNo}
                             onChange={handleInputChange}
                         />
